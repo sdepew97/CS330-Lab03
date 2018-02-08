@@ -4,35 +4,50 @@ import java.util.Arrays;
 
 public class Lab03 {
     //global variable for the cutoff value
-    public static int cutoff = 50;
+    public static int cutoff = 25;
 
     public static void main(String[] args) {
-        //int arraySize = 1000000;
-        int arraySize = 100;
+
+        int arraySize = 1000000;
+        /*
+         * int arraySize = 6000000;
+         * int arraySize = 11000000;
+         * int arraySize = 16000000;
+         * int arraySize = 21000000;
+         * int arraySize = 26000000;
+         * int arraySize = 31000000;
+         * int arraySize = 36000000;
+         * int arraySize = 41000000;
+         * int arraySize = 46000000;
+         * int arraySize = 51000000;
+         */
+
         int[] A = new int[arraySize];
+        int start;
+        int duration;
 
         //Initialize Array
         initialize(A, arraySize);
-        //printArray(A, arraySize);
 
         //Shuffle Array Randomly
         FisherYatesShuffle(A, arraySize);
-        printArray(A, arraySize);
 
-        //quicksort(A, 0, arraySize - 1);
-        //printArray(A, arraySize);
+        start = System.nanoTime();
+        quicksort(A, 0, arraySize - 1);
+        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        System.out.println("Size: " + arraySize + ", Duration " + duration);
 
-        //insertionSort(A, arraySize);
-        //printArray(A, arraySize);
+        /*
+        start = System.nanoTime();
+        hybridSort(A, 0, arraySize - 1, arraySize);
+        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        System.out.println("Size: " + arraySize + ", Duration " + duration);
 
-        //modifiedQuicksort(A, 0, arraySize-1);
-        //printArray(A, arraySize);
-
-        //hybridSort(A, 0, arraySize - 1, arraySize);
-        //printArray(A, arraySize);
-
+        start = System.nanoTime();
         librarySort(A);
-        printArray(A, arraySize);
+        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        System.out.println("Size: " + arraySize + ", Duration " + duration);
+       */
     }
 
     //Task #1
