@@ -1,7 +1,10 @@
 //Import Statements
-import java.util.Random; 
+import java.util.Random;
+import java.util.Arrays;
 
 public class Lab03 {
+    //global variable for the cutoff value
+    public static int cutoff = 50;
 
     public static void main(String[] args) {
         //int arraySize = 1000000;
@@ -14,14 +17,22 @@ public class Lab03 {
 
         //Shuffle Array Randomly
         FisherYatesShuffle(A, arraySize);
-        //printArray(A, arraySize);
+        printArray(A, arraySize);
 
         //quicksort(A, 0, arraySize - 1);
         //printArray(A, arraySize);
 
-        insertionSort(A, arraySize);
-        printArray(A, arraySize);
+        //insertionSort(A, arraySize);
+        //printArray(A, arraySize);
 
+        //modifiedQuicksort(A, 0, arraySize-1);
+        //printArray(A, arraySize);
+
+        //hybridSort(A, 0, arraySize - 1, arraySize);
+        //printArray(A, arraySize);
+
+        librarySort(A);
+        printArray(A, arraySize);
     }
 
     //Task #1
@@ -81,6 +92,7 @@ public class Lab03 {
         A[i] = temp;
     }
 
+    //Task #3
     private static void insertionSort(int[] A, int n) {
         int key;
         int j;
@@ -89,11 +101,50 @@ public class Lab03 {
             key = A[i];
             j = i - 1;
 
-            while (j >=0 && A[j] > key) {
+            while (j >= 0 && A[j] > key) {
                 A[j + 1] = A[j];
                 j--;
             }
             A[j + 1] = key;
         }
+    }
+
+    //Task #4
+    private static void hybridSort(int[] A, int left, int right, int n) {
+        quicksort(A, left, right);
+        insertionSort(A, n);
+    }
+
+    private static void modifiedQuicksort(int[] A, int left, int right) {
+        Random random = new Random();
+        int m = left;
+
+        if ((right - left) < cutoff) {
+            return;
+        }
+
+        //pivot is a random element in A[l]...A[u]
+        swap(A, left, random.nextInt(right - left + 1) + left);
+
+        for (int i = left + 1; i <= right; i++) {
+            if (A[i] < A[left]) {
+                swap(A, ++m, i);
+            }
+        }
+
+        swap(A, left, m);
+        modifiedQuicksort(A, left, m - 1);
+        modifiedQuicksort(A, m + 1, right);
+    }
+
+    //Task #5
+
+    /* (From Java Documentation)
+     * Implementation note: The sorting algorithm is a Dual-Pivot Quicksort by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch.
+     * This algorithm offers O(n log(n)) performance on many data sets that cause other quicksorts to degrade to quadratic performance,
+     * and is typically faster than traditional (one-pivot) Quicksort implementations.
+     */
+    private static void librarySort(int[] A) {
+        Arrays.sort(A);
     }
 }
