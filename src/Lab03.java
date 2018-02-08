@@ -34,18 +34,18 @@ public class Lab03 {
 
         start = System.nanoTime();
         quicksort(A, 0, arraySize - 1);
-        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        duration = (System.nanoTime() - start) / 1000000.0; //duration is in miliseconds
         System.out.println("Size: " + arraySize + ", Duration " + duration);
 
         /*
         start = System.nanoTime();
         hybridSort(A, 0, arraySize - 1, arraySize);
-        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        duration = (System.nanoTime() - start) / 1000000.0; //duration is in miliseconds
         System.out.println("Size: " + arraySize + ", Duration " + duration);
 
         start = System.nanoTime();
         librarySort(A);
-        duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
+        duration = (System.nanoTime() - start) / 1000000.0; //duration is in miliseconds
         System.out.println("Size: " + arraySize + ", Duration " + duration);
        */
     }
