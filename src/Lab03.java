@@ -7,21 +7,19 @@ public class Lab03 {
     public static int cutoff = 25;
 
     public static void main(String[] args) {
-        /*
-        int arraySize = 1000000;
-        */
-          int arraySize = 6000000;
-          /*
-         * int arraySize = 11000000;
-         * int arraySize = 16000000;
-         * int arraySize = 21000000;
-         * int arraySize = 26000000;
-         * int arraySize = 31000000;
-         * int arraySize = 36000000;
-         * int arraySize = 41000000;
-         * int arraySize = 46000000;
-         * int arraySize = 51000000;
-         */
+
+//        int arraySize = 1000000;
+//        int arraySize = 6000000;
+        int arraySize = 11000000;
+//        int arraySize = 16000000;
+//        int arraySize = 21000000;
+//        int arraySize = 26000000;
+//        int arraySize = 31000000;
+//        int arraySize = 36000000;
+//        int arraySize = 41000000;
+//        int arraySize = 46000000;
+//        int arraySize = 51000000;
+
 
         int[] A = new int[arraySize];
         long start;
