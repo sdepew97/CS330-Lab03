@@ -23,8 +23,8 @@ public class Lab03 {
          */
 
         int[] A = new int[arraySize];
-        int start;
-        int duration;
+        long start;
+        double duration;
 
         //Initialize Array
         initialize(A, arraySize);
