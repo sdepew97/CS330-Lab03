@@ -8,8 +8,8 @@ public class Lab03 {
 
     public static void main(String[] args) {
 
-//        int arraySize = 1000000;
-        int arraySize = 6000000;
+        int arraySize = 1000000;
+//        int arraySize = 6000000;
 //        int arraySize = 11000000;
 //        int arraySize = 16000000;
 //        int arraySize = 21000000;
