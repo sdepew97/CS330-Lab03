@@ -16,8 +16,8 @@ public class Lab03 {
 //        int arraySize = 26000000;
 //        int arraySize = 31000000;
 //        int arraySize = 36000000;
-//        int arraySize = 41000000;
-        int arraySize = 46000000;
+        int arraySize = 41000000;
+//        int arraySize = 46000000;
 //        int arraySize = 51000000;
 
 
